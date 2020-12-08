@@ -16,4 +16,5 @@ public class UserRequestModel {
     private String email;
     private String password;
     private AddressRequestModel address;
+    private LocationRequestModel location;
 }

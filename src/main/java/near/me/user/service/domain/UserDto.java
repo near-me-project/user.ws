@@ -20,5 +20,5 @@ public class UserDto implements Serializable {
     private String password;
     private String encryptedPassword;
     private AddressDto address;
-
+    private LocationDto location;
 }
