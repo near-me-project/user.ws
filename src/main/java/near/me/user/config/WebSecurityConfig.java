@@ -42,6 +42,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST, environment.getProperty("login.url.path")).permitAll()
                 .antMatchers(HttpMethod.POST, environment.getProperty("registration.url.path")).permitAll()
+                .antMatchers(HttpMethod.GET, "/status").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .addFilter(getAuthenticationFilter())

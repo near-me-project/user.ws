@@ -31,4 +31,16 @@ public class UserController {
         UserDto userDtoOutcome = userService.createUser(userDto);
         return ModelMapper.map(userDtoOutcome, UserResponseModel.class);
     }
+
+    @PutMapping(path = "/{userId}")
+    public UserResponseModel updateUser(@RequestBody UserRequestModel userRequestModel) {
+        UserDto userDto = ModelMapper.map(userRequestModel, UserDto.class);
+        UserDto userDtoOutcome = userService.updateUser(userDto);
+        return ModelMapper.map(userDtoOutcome, UserResponseModel.class);
+    }
+
+    @DeleteMapping(path = "/{userId}")
+    public void deleteUser(@PathVariable(name = "userId") String userId) {
+        userService.deleteUser(userId);
+    }
 }

@@ -9,7 +9,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class RabbitClient {
 
-    public static final String SOCIAL_NETWORK_QUEUE = "social_network";
+    public static final String SOCIAL_NETWORK_QUEUE_USER_CREATION_EVENT = "social_network_queue_user_creation_event";
+    public static final String SOCIAL_NETWORK_QUEUE_USER_UPDATE_EVENT = "social_network_queue_user_update_event";
+    public static final String SOCIAL_NETWORK_QUEUE_USER_DELETE_EVENT = "social_network_queue_user_delete_event";
+
     private final ConnectionFactory factory;
 
     public RabbitClient() {
